@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E5E5E5"
+        tools:context=".fragment.MyProfileFragment">
+
+        <ImageView
+            android:id="@+id/myImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:circularflow_radiusInDP="10dp"
+            app:layout_constraintBottom_toTopOf="@id/myName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/myName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="James Doe"
+            android:textAlignment="center"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintBottom_toTopOf="@id/myFunction" />
+
+        <TextView
+            android:id="@+id/myFunction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Software Developer"
+            android:textAlignment="center"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toTopOf="@id/mentorImage" />
+
+        <ImageView
+            android:id="@+id/mentorImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:circularflow_radiusInDP="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/mentorName" />
+
+        <TextView
+            android:id="@+id/mentorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Johny Doe"
+            android:textAlignment="center"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintBottom_toTopOf="@id/mentorFunction"
+
+            />
+
+        <TextView
+            android:id="@+id/mentorFunction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="James Doe mentor"
+            app:layout_constraintBottom_toTopOf="@id/vector"
+            android:layout_marginBottom="50dp"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/vector1"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:src="@drawable/vector1"
+            app:layout_constraintBottom_toTopOf="@id/email"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/vector"
+            android:layout_marginRight="140dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <ImageView
+            android:id="@+id/vector"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:src="@drawable/vector2"
+            app:layout_constraintBottom_toTopOf="@id/email"
+            app:layout_constraintRight_toLeftOf="@+id/vector1"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="140dp" />
+
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="johny.doe@3track.com"
+            app:layout_constraintBottom_toTopOf="@id/phoneNumber" />
+
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+4007123456678"
+            app:layout_constraintBottom_toTopOf="@id/location" />
+
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Office Location: Targu Mures"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="80dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

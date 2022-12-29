@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_activitesFragment"
+            app:destination="@id/activitesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activitesFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.ActivitesFragment"
+        android:label="fragment_activites"
+        tools:layout="@layout/fragment_activites" >
+        <action
+            android:id="@+id/action_activitesFragment_to_myGroupsFragment"
+            app:destination="@id/myGroupsFragment" />
+        <action
+            android:id="@+id/action_activitesFragment_to_myTasksFragment"
+            app:destination="@id/myTasksFragment" />
+        <action
+            android:id="@+id/action_activitesFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myGroupsFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.MyGroupsFragment"
+        android:label="fragment_my_groups"
+        tools:layout="@layout/fragment_my_groups" >
+        <action
+            android:id="@+id/action_myGroupsFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.MyProfileFragment"
+        android:label="fragment_my_profile2"
+        tools:layout="@layout/fragment_my_profile2" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myTasksFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.MyTasksFragment"
+        android:label="fragment_my_tasks"
+        tools:layout="@layout/fragment_my_tasks" >
+        <action
+            android:id="@+id/action_myTasksFragment_to_createNewTaskFragment"
+            app:destination="@id/createNewTaskFragment" />
+        <action
+            android:id="@+id/action_myTasksFragment_to_taskDescriptionFragment"
+            app:destination="@id/taskDescriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewTaskFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.CreateNewTaskFragment"
+        android:label="fragment_create_new_task"
+        tools:layout="@layout/fragment_create_new_task" />
+    <fragment
+        android:id="@+id/taskDescriptionFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.TaskDescriptionFragment"
+        android:label="TaskDescriptionFragment" >
+        <action
+            android:id="@+id/action_taskDescriptionFragment_to_editTaskFragment"
+            app:destination="@id/editTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.EditTaskFragment"
+        android:label="EditTaskFragment" />
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.UserListFragment"
+        android:label="UserListFragment" />
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="ro.sapientia.android_11eloadas.fragment.UpdateProfileFragment"
+        android:label="fragment_update_profile"
+        tools:layout="@layout/fragment_update_profile" />
+</navigation>

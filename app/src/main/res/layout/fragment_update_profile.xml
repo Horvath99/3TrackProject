@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E5E5E5"
+        tools:context=".fragment.UpdateProfileFragment">
+
+        <com.google.android.material.textfield.TextInputEditText
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="100dp"
+            android:id="@+id/lastNameUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textAlignment="center"
+            android:text="Lazar"/>
+        <com.google.android.material.textfield.TextInputEditText
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastNameUpdateProfile"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/firstNameUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textAlignment="center"
+            android:text="Chuck"/>
+        <com.google.android.material.textfield.TextInputEditText
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstNameUpdateProfile"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/locationUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textAlignment="center"
+            android:text="Targu Mures"/>
+        <com.google.android.material.textfield.TextInputEditText
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationUpdateProfile"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/phoneNumberUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textAlignment="center"
+            android:text="07NoiDoi"/>
+        <com.google.android.material.textfield.TextInputEditText
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberUpdateProfile"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/imageUrlUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textAlignment="center"
+            android:text="imageURL"/>
+        <Button
+            android:id="@+id/updateMyProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2264F4"
+            app:layout_constraintTop_toBottomOf="@id/imageUrlUpdateProfile"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            android:text="Update"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

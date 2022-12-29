@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+             <Toolbar
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/toolbar"
+                 android:background="@color/white"
+                 android:minHeight="?attr/actionBarSize"
+                 android:theme="@style/Theme.Android10eloadas">
+                 <de.hdodenhof.circleimageview.CircleImageView
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:src="@drawable/ic_baseline_circle_24"
+                     android:padding="8dp"
+                     android:id="@+id/profile_picture">
+                 </de.hdodenhof.circleimageview.CircleImageView>
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="3Track"
+                     android:id="@+id/mytitle">
+                 </TextView>
+
+                 <ImageView
+                     android:visibility="gone"
+                     android:layout_gravity="end"
+                     android:layout_marginHorizontal="5dp"
+                     android:layout_width="30dp"
+                     android:layout_height="30dp"
+                     android:id="@+id/search"
+                     android:src="@drawable/ic_baseline_search_24">
+                 </ImageView>
+                 <ImageView
+                     android:visibility="gone"
+                     android:layout_gravity="end"
+                     android:layout_marginHorizontal="5dp"
+                     android:layout_width="30dp"
+                     android:layout_height="30dp"
+                     android:id="@+id/addTask"
+                     android:src="@drawable/ic_baseline_add_circle_outline_24">
+                 </ImageView>
+                 <Button
+                     android:layout_gravity="end"
+                     android:id="@+id/createTask"
+                     android:layout_width="80dp"
+                     android:layout_height="40dp"
+                     android:background="#2264F4"
+                     android:textColor="@color/white"
+                     android:text="Create"
+                     android:textSize="10dp"
+                     android:layout_margin="5dp"
+                     android:visibility="gone"
+                     />
+                 <Button
+                     android:layout_gravity="end"
+                     android:id="@+id/updateTask"
+                     android:layout_width="80dp"
+                     android:layout_height="40dp"
+                     android:background="#2264F4"
+                     android:textColor="@color/white"
+                     android:text="Update"
+                     android:textSize="10dp"
+                     android:layout_margin="5dp"
+                     android:visibility="gone"
+                     />
+                 <ImageView
+                     android:layout_marginHorizontal="5dp"
+                     android:id="@+id/editTask"
+                     android:layout_gravity="end"
+                     android:layout_width="30dp"
+                     android:layout_height="30dp"
+                     android:src="@drawable/ic_baseline_edit_24"
+                     android:visibility="gone"
+                     />
+             </Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <fragment
+
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navigation" />
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/white"
+            app:itemIconTint="#333333"
+            android:id="@+id/bottom_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_nav_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
