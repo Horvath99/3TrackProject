@@ -63,8 +63,7 @@
                      android:id="@+id/createTask"
                      android:layout_width="80dp"
                      android:layout_height="40dp"
-                     android:background="#2264F4"
-                     android:textColor="@color/white"
+                     android:background="#102264F4"
                      android:text="Create"
                      android:textSize="10dp"
                      android:layout_margin="5dp"
@@ -99,6 +98,7 @@
         <fragment
 
             android:id="@+id/nav_host_fragment"
+
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -109,6 +109,7 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
 
             app:layout_constraintBottom_toBottomOf="parent"
+
             android:background="@color/white"
             app:itemIconTint="#333333"
             android:id="@+id/bottom_nav_view"

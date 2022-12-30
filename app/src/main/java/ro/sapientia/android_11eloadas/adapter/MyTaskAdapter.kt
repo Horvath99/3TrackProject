@@ -26,7 +26,8 @@ import ro.sapientia.android_11eloadas.viewmodel.UserListViewModelFactory
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MyTaskAdapter(private val list : List<MyTaskItem>,private val listUsers : List<User>,private val listDepartment : List<Department>) : RecyclerView.Adapter<MyTaskAdapter.MyTaskViewHolder>() {
+class MyTaskAdapter(private val list : List<MyTaskItem>,private val listUsers : List<User>,private val listDepartment : List<Department>)
+    : RecyclerView.Adapter<MyTaskAdapter.MyTaskViewHolder>() {
     class MyTaskViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var id : Int = 0
         val projectType : TextView = itemView.findViewById(R.id.projectType)

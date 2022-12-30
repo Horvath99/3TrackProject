@@ -31,11 +31,14 @@ class TaskDescriptionFragment : Fragment() {
 
     private lateinit var myTaskViewModel: MyTasksViewModel
     private lateinit var userListViewModel: UserListViewModel
+    private lateinit var departmentsViewModel: DepartmentsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val factory = MyTasksViewModelFactory(TrackerRepository())
         val factoryUsers = UserListViewModelFactory(TrackerRepository())
+        val factoryDepartments= DepartmentsViewModelFactory(TrackerRepository())
+        departmentsViewModel = ViewModelProvider(this,factoryDepartments).get(DepartmentsViewModel::class.java)
         userListViewModel = ViewModelProvider(this,factoryUsers).get(UserListViewModel :: class.java)
         myTaskViewModel = ViewModelProvider(this,factory).get(MyTasksViewModel::class.java)
 
@@ -68,7 +71,7 @@ class TaskDescriptionFragment : Fragment() {
             findNavController().navigate(R.id.action_taskDescriptionFragment_to_editTaskFragment,bundle)
         }
 
-
+        val priorityList = listOf<String>("LOW","MEDIUM","HIGH","BLOCKED","DONE")
 
         myTaskViewModel.getMyTasks()
         myTaskViewModel.tasksList.observe(viewLifecycleOwner){
@@ -76,18 +79,26 @@ class TaskDescriptionFragment : Fragment() {
 
             userListViewModel.readUsers()
             userListViewModel.userList.observe(viewLifecycleOwner){
-                val userList = userListViewModel.userList.value!!
-                binding.taskDescription.text = task?.description
-                binding.deadline.text = task?.deadline.toString()
-                binding.taskType.text = task?.department_ID.toString()
-                binding.taskTitle.text = task?.title
-                val assignedByName = userList.find { it.ID == task?.created_by_user_ID}
-                val date = longToDate(task?.created_time)
-                binding.assignedBy.text = assignedByName?.last_name + " " + assignedByName?.first_name + " " + date
-                binding.assignedDate.text = date
-                val assigne = userList.find { it.ID == task?.asigned_to_user_ID }
-                binding.assignee.text = assigne?.last_name + " " + assigne?.first_name
-                binding.deadline.text = date.substringAfterLast(" ")
+                departmentsViewModel.getDepartments()
+                departmentsViewModel.departmentList.observe(viewLifecycleOwner){
+                    val departmentList = departmentsViewModel.departmentList.value!!
+                    val userList = userListViewModel.userList.value!!
+                    val taskType = departmentList.find { it.ID == task?.department_ID }
+                    binding.taskType.text = taskType?.name
+                    binding.priority.text = priorityList[task?.priority!!-1]
+                    binding.taskDescription.text = task?.description
+                    binding.deadline.text = task?.deadline.toString()
+                    //binding.taskType.text = task?.department_ID.toString()
+                    binding.taskTitle.text = task?.title
+                    val assignedByName = userList.find { it.ID == task?.created_by_user_ID}
+                    val date = longToDate(task?.created_time)
+                    binding.assignedBy.text = assignedByName?.last_name + " " + assignedByName?.first_name + " " + date
+                    binding.assignedDate.text = date
+                    val assigne = userList.find { it.ID == task?.asigned_to_user_ID }
+                    binding.assignee.text = assigne?.last_name + " " + assigne?.first_name
+                    binding.deadline.text = date.substringAfterLast(" ")
+                }
+
 
             }
 

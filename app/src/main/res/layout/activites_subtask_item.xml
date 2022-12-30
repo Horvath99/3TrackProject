@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/subTaskItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#102264F4">
+
+        <TextView
+            android:id="@+id/subTaskId"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="3SS/3S-194"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/subTaskTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Set up company profile"
+            android:textStyle="bold"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintTop_toBottomOf="@+id/subTaskId"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/subTaskAssignedByAndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Janett Doe 2:45 pm"
+            app:layout_constraintTop_toBottomOf="@id/subTaskTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+            android:id="@+id/subTaskAssigneStatic"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Assigne:"
+            app:layout_constraintTop_toBottomOf="@id/subTaskAssignedByAndDate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/subTaskAssignee"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="James Doe"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/subTaskAssigneStatic"
+            app:layout_constraintTop_toBottomOf="@id/subTaskAssignedByAndDate"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

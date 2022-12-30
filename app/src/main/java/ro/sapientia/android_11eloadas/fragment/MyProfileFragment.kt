@@ -58,6 +58,9 @@ class MyProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var toolbarTitle = activity?.findViewById<TextView>(R.id.mytitle)
+        toolbarTitle?.setText("My Profile")
+
         val userName : TextView = binding.myName
         val userEmail : TextView = binding.email
         val userPhoneNumber : TextView = binding.phoneNumber
